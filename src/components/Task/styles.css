@@ -1,0 +1,14 @@
+.alignEnd{
+    /* width: 100%; */
+    /* display: flex;
+    justify-content: flex-end; */
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+
+[contenteditable="true"]{
+  cursor: text;
+  border: 1px solid ;
+}

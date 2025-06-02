@@ -1,0 +1,12 @@
+:root {
+  --ion-color-primary: #D0007A;
+  --ion-color-secondary: #C60088;
+  --ion-color-tertiary: #5260ff;
+  --ion-color-success: #00A63E;
+  /* --ion-color-warning: #ffc409; */
+  --ion-color-danger: #E7000B;
+  --ion-color-light: #FFEDF5;
+  --ion-color-medium-100: #F3F4F6;
+  --ion-color-medium: #E5E7EB;
+  --ion-color-dark: #222428;
+}
