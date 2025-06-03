@@ -14,7 +14,7 @@ import { TaskContext } from "../contexts/task";
 const Home = () => {
   const isMobile = useMediaQuery({ query: "(max-width:780px)" });
 
-  const {tasksList} = useContext(TaskContext);
+  const { tasksList } = useContext(TaskContext);
 
   return (
     <IonPage>
@@ -29,14 +29,13 @@ const Home = () => {
                   : "ion-padding-horizontal"
               }
             >
-              <BtnAddTask id="open-modal" />
-
-              {tasksList.map((item:any) => (
+              {tasksList.map((item: any) => (
                 <Task key={item.id} task={item} />
               ))}
             </IonRow>
           </IonGrid>
           <Modal />
+          <BtnAddTask id="open-modal" />
         </IonContent>
       </main>
     </IonPage>

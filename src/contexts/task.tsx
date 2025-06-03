@@ -12,6 +12,8 @@ export interface TaskContextType {
   tasksList: TaskInterface[];
   addTask: (titleTask: string, descriptionTask: string) => void;
   removeTask: (id: string) => void;
+  checkTask: (id: string) => void;
+  updateTask: (id: string, newTitle: string, newDescription: string) => void;
 }
 
 export const TaskContext = createContext<TaskContextType>(
@@ -22,7 +24,14 @@ export function TaskProvider({ children }: Props) {
   // const { showToast } = useToast();
   const [present] = useIonToast();
 
-  const [tasksList, setTasksList] = useState<TaskInterface[]>([]);
+  const [tasksList, setTasksList] = useState<TaskInterface[]>([
+    {
+      id: v4(),
+      title: 'Teste',
+      description: 'dkkdkdkd',
+      checked: true
+    }
+  ]);
 
   function showToast(message: string, color: string): void{
     present({
@@ -58,6 +67,27 @@ export function TaskProvider({ children }: Props) {
     }
   }
 
+  function updateTask(id: string, newTitle: string, newDescription: string): void {
+    const findTaskPosition = tasksList.findIndex(task => task.id === id);
+
+    const copyTasksList = [...tasksList];
+
+    copyTasksList[findTaskPosition].title = newTitle;
+    copyTasksList[findTaskPosition].description = newDescription;
+
+    setTasksList(copyTasksList);
+  }
+
+  function checkTask(id: string): void{
+    const findPosition = tasksList.findIndex(task => task.id === id);
+
+    const copyTasksList = [...tasksList];
+
+    copyTasksList[findPosition].checked = !copyTasksList[findPosition].checked;
+
+    setTasksList(copyTasksList);
+  }
+
   return (
     <TaskContext.Provider
       value={{
@@ -65,6 +95,8 @@ export function TaskProvider({ children }: Props) {
 
         addTask,
         removeTask,
+        checkTask,
+        updateTask
       }}
     >
       {children}

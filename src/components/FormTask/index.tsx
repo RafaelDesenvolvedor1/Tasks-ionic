@@ -5,7 +5,6 @@ import { Controller, useForm } from "react-hook-form";
 import { IonButton, IonInput, IonNote, IonTextarea } from "@ionic/react";
 
 import { TaskContext } from "../../contexts/task";
-import { useToast } from "../../contexts/ToastContext";
 
 interface FormData {
   title: string;
@@ -21,8 +20,6 @@ export default () => {
   } = useForm<FormData>();
 
   const {addTask} = useContext(TaskContext);
-  const {showToast} = useToast();
-
 
   const onSubmit = (data: FormData) => {
     //console.log("dados enviados: ", data);
