@@ -1,20 +1,15 @@
 import {
-  IonButton,
-  IonButtons,
   IonCard,
   IonCardContent,
   IonCardHeader,
-  IonCardSubtitle,
   IonCardTitle,
   IonCol,
   IonGrid,
-  IonIcon,
   IonRow,
-  IonToolbar,
   useIonAlert,
 } from "@ionic/react";
 import { checkmark, create, trash } from "ionicons/icons";
-import React, { useContext, useState } from "react";
+import { useContext } from "react";
 import { useMediaQuery } from "react-responsive";
 
 import "./styles.css";
@@ -40,7 +35,7 @@ export default ({ task }: TaskCard) => {
 
   const { removeTask, checkTask, updateTask } = useContext(TaskContext);
 
-  const [isEditing, setIsEditing] = useState<boolean>(false);
+  // const [isEditing, setIsEditing] = useState<boolean>(false);
 
   function showAlert() {
     presentAlert({
@@ -86,9 +81,9 @@ export default ({ task }: TaskCard) => {
     });
   }
 
-  function openEditTask() {
-    setIsEditing(!isEditing);
-  }
+  // function openEditTask() {
+  //   setIsEditing(!isEditing);
+  // }
 
   function handleRemoveTask() {
     showAlert();
@@ -109,13 +104,13 @@ export default ({ task }: TaskCard) => {
 
           <IonCardTitle
             className="ion-margin-vertical"
-            contentEditable={isEditing}
+            // contentEditable={isEditing}
           >
             <strong>{task.title} </strong>
           </IonCardTitle>
         </IonCardHeader>
 
-        <IonCardContent contentEditable={isEditing}>
+        <IonCardContent /*contentEditable={isEditing}*/>
           {task.description}
         </IonCardContent>
 
@@ -123,14 +118,14 @@ export default ({ task }: TaskCard) => {
           <IonRow class="ion-justify-content-center">
             <BtnTask
               click={handleRemoveTask}
-              disabled={isEditing}
+              // disabled={isEditing}
               color="danger"
               icon={trash}
             />
             <BtnTask click={showAlertEdit} color="tertiary" icon={create} />
             <BtnTask
               click={() => checkTask(task.id)}
-              disabled={isEditing}
+              // disabled={isEditing}
               color="success"
               icon={checkmark}
             />

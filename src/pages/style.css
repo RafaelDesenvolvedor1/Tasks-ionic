@@ -11,3 +11,10 @@ main{
     /* background-color:; */
 }
 
+
+@media(max-width: 780px){
+    main{
+        margin-top: 0 !important;
+        border-radius: 0;
+    }
+}

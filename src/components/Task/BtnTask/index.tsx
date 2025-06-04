@@ -1,5 +1,4 @@
-import { IonButton, IonCol, IonGrid, IonIcon, IonRow } from "@ionic/react";
-import React from "react";
+import { IonButton, IonCol, IonIcon } from "@ionic/react";
 
 
 

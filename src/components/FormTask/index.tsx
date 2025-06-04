@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 
 import "./styles.css";
 import { Controller, useForm } from "react-hook-form";
@@ -22,19 +22,12 @@ export default () => {
   const {addTask} = useContext(TaskContext);
 
   const onSubmit = (data: FormData) => {
-    //console.log("dados enviados: ", data);
 
     addTask(data.title, data.description);
 
     reset();
 
   };
-
-  // function errTitle(data: any){
-  //   if(errors.title){
-  //     showToast("O Titulo é obrigatório", "danger")
-  //   }
-  // }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>

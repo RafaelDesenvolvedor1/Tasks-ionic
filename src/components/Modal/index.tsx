@@ -11,14 +11,14 @@ import {
 } from "@ionic/react";
 import { close } from "ionicons/icons";
 
-import React, { useRef } from "react";
+import  { useRef } from "react";
 import FormTask from "../FormTask";
 
 
 export default () => {
   const modal = useRef<HTMLIonModalElement>(null);
 
-  function onWillDismiss(event: CustomEvent<OverlayEventDetail>) {}
+  function onWillDismiss(_event: CustomEvent<OverlayEventDetail>) {}
 
   return (
     <IonModal
