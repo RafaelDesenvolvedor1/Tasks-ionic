@@ -10,6 +10,7 @@ import { useMediaQuery } from "react-responsive";
 import { useContext } from "react";
 
 import { TaskContext } from "../contexts/task";
+import Footer from "../components/Footer";
 
 const Home = () => {
   const isMobile = useMediaQuery({ query: "(max-width:780px)" });
@@ -38,6 +39,7 @@ const Home = () => {
           <BtnAddTask id="open-modal" />
         </IonContent>
       </main>
+      <Footer/>
     </IonPage>
   );
 };
