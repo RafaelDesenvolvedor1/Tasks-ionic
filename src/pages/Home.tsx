@@ -22,24 +22,27 @@ const Home = () => {
       <Header />
       <main>
         <IonContent>
-          <IonGrid>
-            <IonRow
-              className={
-                isMobile
-                  ? "ion-jusify-content-center"
-                  : "ion-padding-horizontal"
-              }
-            >
-              {tasksList.map((item: any) => (
-                <Task key={item.id} task={item} />
-              ))}
-            </IonRow>
-          </IonGrid>
-          <Modal />
-          <BtnAddTask id="open-modal" />
+          <section>
+            <IonGrid>
+              <IonRow
+                className={
+                  isMobile
+                    ? "ion-jusify-content-center"
+                    : "ion-padding-horizontal"
+                }
+              >
+                {tasksList.map((item: any) => (
+                  <Task key={item.id} task={item} />
+                ))}
+              </IonRow>
+            </IonGrid>
+            <Modal />
+            <BtnAddTask id="open-modal" />
+
+            <Footer />
+          </section>
         </IonContent>
       </main>
-      <Footer/>
     </IonPage>
   );
 };
