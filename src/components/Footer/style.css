@@ -1,5 +1,7 @@
 ion-footer {
     background-color: var(--ion-color-medium);
+    grid-row: 2 /3;
+    grid-column: 1 / 4;
 }
 
 /* ion-note{

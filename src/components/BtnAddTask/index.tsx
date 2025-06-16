@@ -9,7 +9,7 @@ type btnAdd = {
 
 export default ({id}:btnAdd) => {
   return (
-    <IonFab slot="fixed" horizontal="end"  vertical="bottom" className="ion-margin">
+    <IonFab slot="fixed" horizontal="end"  vertical="bottom" className="ion-margin" style={{marginBottom: "3rem"}}>
       <IonFabButton id={id}>
         <IonIcon icon={add}/>
       </IonFabButton>

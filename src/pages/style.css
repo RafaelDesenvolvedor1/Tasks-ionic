@@ -11,6 +11,25 @@ main{
     /* background-color:; */
 }
 
+main section{
+    min-height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 50px;
+}
+
+main section ion-grid{
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+    width: 100%;
+}
+/* main section div{
+    grid-column: 1 / 5;
+    grid-row: 1 / 2;
+} */
+
+
 
 @media(max-width: 780px){
     main{
