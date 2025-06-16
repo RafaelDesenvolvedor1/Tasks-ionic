@@ -28,7 +28,7 @@ const Home = () => {
                 className={
                   isMobile
                     ? "ion-jusify-content-center"
-                    : "ion-padding-horizontal"
+                    : "ion-padding-horizontal" 
                 }
               >
                 {tasksList.map((item: any) => (
@@ -37,11 +37,10 @@ const Home = () => {
               </IonRow>
             </IonGrid>
             <Modal />
-            <BtnAddTask id="open-modal" />
-
             <Footer />
           </section>
         </IonContent>
+        <BtnAddTask id="open-modal" />
       </main>
     </IonPage>
   );
