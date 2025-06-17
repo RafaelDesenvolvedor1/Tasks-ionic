@@ -2,6 +2,7 @@ import {
   IonCard,
   IonCardContent,
   IonCardHeader,
+  IonCardSubtitle,
   IonCardTitle,
   IonCol,
   IonGrid,
@@ -57,27 +58,27 @@ export default ({ task }: TaskCard) => {
       inputs: [
         {
           name: "title",
-          type: 'text',
+          type: "text",
           value: task.title,
-          placeholder:'Titulo...'
+          placeholder: "Titulo...",
         },
         {
           name: "description",
-          type: 'textarea',
+          type: "textarea",
           value: task.description,
-          placeholder:'Descrição...',
+          placeholder: "Descrição...",
         },
       ],
       buttons: [
         {
-          text: 'Cancelar',
-          role: 'cancel',
+          text: "Cancelar",
+          role: "cancel",
         },
         {
-          text: 'Salvar',
-          handler: (data) => updateTask(task.id, data.title, data.description)
-        }
-      ]
+          text: "Salvar",
+          handler: (data) => updateTask(task.id, data.title, data.description),
+        },
+      ],
     });
   }
 
@@ -94,43 +95,38 @@ export default ({ task }: TaskCard) => {
       size={isMobile ? "12" : "3"}
       className={isMobile ? "ion-margin-vertical" : "ion-margin"}
     >
-      <IonCard color={task.checked ? "success" : "default"}>
+      <IonCard
+        className="ion-padding-vertical"
+        color={task.checked ? "success" : "default"}
+      >
         <IonCardHeader>
-          {/* <div className="alignEnd">
-            <IonButton fill="clear" onClick={openEditTask}>
-              <IonIcon slot="icon-only" color="dark" icon={create}></IonIcon>
-            </IonButton>
-          </div> */}
-
-          <IonCardTitle
-            className="ion-margin-vertical"
-            // contentEditable={isEditing}
-          >
+          <IonCardTitle>
             <strong>{task.title} </strong>
           </IonCardTitle>
+          <IonCardSubtitle>17/03/2025</IonCardSubtitle>
         </IonCardHeader>
 
         <IonCardContent /*contentEditable={isEditing}*/>
           {task.description}
         </IonCardContent>
 
-        <IonGrid>
+        {/* <IonGrid className="containerButtons">
           <IonRow class="ion-justify-content-center">
             <BtnTask
-              click={handleRemoveTask}
-              // disabled={isEditing}
-              color="danger"
-              icon={trash}
-            />
-            <BtnTask click={showAlertEdit} color="tertiary" icon={create} />
-            <BtnTask
               click={() => checkTask(task.id)}
-              // disabled={isEditing}
               color="success"
               icon={checkmark}
             />
           </IonRow>
-        </IonGrid>
+
+          <IonRow class="ion-justify-content-center">
+            <BtnTask click={showAlertEdit} color="tertiary" icon={create} />
+          </IonRow>
+
+          <IonRow class="ion-justify-content-center">
+            <BtnTask click={handleRemoveTask} color="danger" icon={trash} />
+          </IonRow>
+        </IonGrid> */}
       </IonCard>
     </IonCol>
   );

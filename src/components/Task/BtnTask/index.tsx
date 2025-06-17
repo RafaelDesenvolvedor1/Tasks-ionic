@@ -12,8 +12,8 @@ interface Buttons {
 
 export default ({color, icon, disabled, click}:Buttons) => {
   return (
-    <IonCol size="3">
-      <IonButton disabled={disabled}  shape="round" size="large" color={color} onClick={click}>
+    <IonCol size="12">
+      <IonButton disabled={disabled} expand="block"  size="large" color={color} onClick={click} >
         <IonIcon slot="icon-only" color="light" icon={icon} />
       </IonButton>
     </IonCol>
