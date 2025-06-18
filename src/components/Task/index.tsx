@@ -110,8 +110,8 @@ export default ({ task }: TaskCard) => {
           {task.description}
         </IonCardContent>
 
-        {/* <IonGrid className="containerButtons">
-          <IonRow class="ion-justify-content-center">
+        <IonGrid className="containerButtons">
+          <IonRow>
             <BtnTask
               click={() => checkTask(task.id)}
               color="success"
@@ -119,14 +119,14 @@ export default ({ task }: TaskCard) => {
             />
           </IonRow>
 
-          <IonRow class="ion-justify-content-center">
+          {/* <IonRow class="ion-justify-content-center">
             <BtnTask click={showAlertEdit} color="tertiary" icon={create} />
-          </IonRow>
+          </IonRow> */}
 
-          <IonRow class="ion-justify-content-center">
+          {/* <IonRow class="ion-justify-content-center">
             <BtnTask click={handleRemoveTask} color="danger" icon={trash} />
-          </IonRow>
-        </IonGrid> */}
+          </IonRow> */}
+        </IonGrid>
       </IonCard>
     </IonCol>
   );
