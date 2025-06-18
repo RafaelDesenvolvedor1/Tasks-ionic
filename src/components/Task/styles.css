@@ -19,6 +19,8 @@ ion-card {
   -webkit-line-clamp: 9; /* número de linhas desejadas */
   -webkit-box-orient: vertical;
   overflow: hidden;
+  cursor: pointer;
+  transition: .3s;
 }
 
 ion-card-subtitle{
@@ -35,6 +37,9 @@ ion-card::after {
   background: linear-gradient(180deg, transparent 0%, rgb(255, 253, 253) 100%);
 }
 
+ion-card:hover{
+  transform: scale(1.05);
+}
 .containerButtons {
   position: absolute;
   width: 100%;
